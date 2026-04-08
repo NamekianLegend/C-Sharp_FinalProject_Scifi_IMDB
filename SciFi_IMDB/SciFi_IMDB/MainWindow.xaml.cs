@@ -18,3 +18,7 @@ namespace SciFi_IMDB
 }
 
 // Astronaut image: Image by <a href="https://pixabay.com/users/archipix-36936035/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=8184040">ArchiPix</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=8184040">Pixabay</a>
+// Movie icon image: <a href="https://www.flaticon.com/free-icons/movies" title="movies icons">Movies icons created by Freepik - Flaticon</a>
+// Home icon image: <a href="https://www.flaticon.com/free-icons/home" title="home icons">Home icons created by Vectors Market - Flaticon</a>
+// Actor icon image: <a href="https://www.flaticon.com/free-icons/actor" title="actor icons">Actor icons created by Freepik - Flaticon</a>
+// TV show icon image: <a href="https://www.flaticon.com/free-icons/tv" title="tv icons">Tv icons created by Freepik - Flaticon</a>
