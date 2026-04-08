@@ -2,8 +2,47 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:SciFi_IMDB"
+             xmlns:vm="clr-namespace:SciFi_IMDB.ViewModels"
+             xmlns:views="clr-namespace:SciFi_IMDB.Views"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Styles/ThemeColors.xaml" />
+                <ResourceDictionary Source="/Styles/Common.xaml" />
+                <ResourceDictionary Source="/Styles/Controls.xaml" />
+                <ResourceDictionary Source="/Styles/Menus.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            
+            <!--Need to update this!!!!-->
+            <BitmapImage x:Key="NorthwindLogo" UriSource="/Assets/compass.png" />
+
+            <!-- Define data templates for each viewmodel -->
+            <DataTemplate DataType="{x:Type vm:AlbumsViewModel}">
+                <views:AlbumsView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type vm:ArtistsViewModel}">
+                <views:ArtistsView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type vm:TracksViewModel}">
+                <views:TracksView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type vm:OrdersViewModel}">
+                <views:OrdersView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type vm:CatalogViewModel}">
+                <views:CatalogView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type vm:HomeViewModel}">
+                <views:HomeView/>
+            </DataTemplate>
+
+        </ResourceDictionary>
+
     </Application.Resources>
 </Application>

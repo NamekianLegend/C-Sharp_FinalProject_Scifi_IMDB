@@ -1,4 +1,26 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    
+
+    <!-- Terminal-inspired theme brushes -->
+    <SolidColorBrush x:Key="TerminalBackground" Color="#FF000000" />
+    <SolidColorBrush x:Key="TerminalPanel" Color="#FF071013" />
+    <SolidColorBrush x:Key="TerminalText" Color="#FF66FF66" />
+    <SolidColorBrush x:Key="TerminalAccent" Color="#FF004400" />
+    <SolidColorBrush x:Key="TerminalIconBackground" Color="#FF001100" />
+    <SolidColorBrush x:Key="TerminalIconBorder" Color="#FF003300" />
+
+    <!-- Override common system brushes so popups/menus/combo dropdowns use terminal theme -->
+    <SolidColorBrush x:Key="{x:Static SystemColors.WindowBrushKey}" Color="#FF071013" />
+    <SolidColorBrush x:Key="{x:Static SystemColors.ControlBrushKey}" Color="#FF071013" />
+    <SolidColorBrush x:Key="{x:Static SystemColors.MenuBrushKey}" Color="#FF071013" />
+    <SolidColorBrush x:Key="{x:Static SystemColors.WindowTextBrushKey}" Color="#FF66FF66" />
+    <SolidColorBrush x:Key="{x:Static SystemColors.ControlTextBrushKey}" Color="#FF66FF66" />
+    <SolidColorBrush x:Key="{x:Static SystemColors.MenuTextBrushKey}" Color="#FF66FF66" />
+    <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="#FF004400" />
+    <SolidColorBrush x:Key="{x:Static SystemColors.HighlightTextBrushKey}" Color="#FF66FF66" />
+
+    <!-- ToolTip/system info brushes so tooltips follow the terminal theme -->
+    <SolidColorBrush x:Key="{x:Static SystemColors.InfoBrushKey}" Color="#FF071013" />
+    <SolidColorBrush x:Key="{x:Static SystemColors.InfoTextBrushKey}" Color="#FF66FF66" />
+
 </ResourceDictionary>

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace SciFi_IMDB.ViewModels
 {
-    class HomeViewModel
+    public class HomeViewModel
     {
     }
 }
