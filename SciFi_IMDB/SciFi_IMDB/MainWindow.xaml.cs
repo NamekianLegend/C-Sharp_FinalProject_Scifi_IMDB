@@ -22,3 +22,5 @@ namespace SciFi_IMDB
         }
     }
 }
+
+// Astronaut image: Image by <a href="https://pixabay.com/users/archipix-36936035/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=8184040">ArchiPix</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=8184040">Pixabay</a>
