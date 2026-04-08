@@ -1,0 +1,54 @@
+﻿<UserControl x:Class="A2_Chinook_EFandLINQ.Views.CatalogView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:A2_Chinook_EFandLINQ.Views"
+             xmlns:vm="clr-namespace:A2_Chinook_EFandLINQ.ViewModels"
+             xmlns:conv="clr-namespace:A2_Chinook_EFandLINQ.Services"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid Margin="20">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="300"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <ListBox Grid.Column="0" ItemsSource="{Binding Alphabet}" 
+                 SelectedItem="{Binding SelectedLetter}"
+                 BorderThickness="0" Background="#F3E5D8"/>
+
+        <DockPanel Grid.Column="1" Margin="10,0">
+            <TextBlock DockPanel.Dock="Top" Text="Artists" FontWeight="Bold" Margin="0,0,0,5"/>
+            <ListBox ItemsSource="{Binding FilteredArtists}" 
+                     SelectedItem="{Binding SelectedArtist}"
+                     DisplayMemberPath="Name"/>
+        </DockPanel>
+
+        <Grid Grid.Column="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <DockPanel Grid.Row="0" Margin="0,0,0,10">
+                <TextBlock DockPanel.Dock="Top" Text="Albums" FontWeight="Bold" Margin="0,0,0,5"/>
+                <ListBox ItemsSource="{Binding SelectedArtist.Albums}" 
+                         SelectedItem="{Binding SelectedAlbum}"
+                         DisplayMemberPath="Title"/>
+            </DockPanel>
+
+            <DockPanel Grid.Row="1">
+                <TextBlock DockPanel.Dock="Top" Text="Tracks" FontWeight="Bold" Margin="0,0,0,5"/>
+                <ListBox ItemsSource="{Binding SelectedAlbum.Tracks}">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Name}"/>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </DockPanel>
+        </Grid>
+    </Grid>
+</UserControl>
