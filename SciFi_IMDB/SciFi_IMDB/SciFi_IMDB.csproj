@@ -9,14 +9,31 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Assets\" />
-    <Folder Include="Commands\" />
+    <None Remove="Assets\spaceman.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="Data\Generated\" />
     <Folder Include="Models\Generated\" />
-    <Folder Include="Views\" />
-    <Folder Include="ViewModels\" />
-    <Folder Include="Styles\" />
-    <Folder Include="Services\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="10.0.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="10.0.5">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="10.0.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="10.0.5">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\spaceman.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
 </Project>
