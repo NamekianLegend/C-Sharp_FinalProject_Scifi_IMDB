@@ -14,8 +14,7 @@
                 <ResourceDictionary Source="/Styles/Menus.xaml" />
             </ResourceDictionary.MergedDictionaries>
             
-            <!--Need to update this!!!!-->
-            <BitmapImage x:Key="NorthwindLogo" UriSource="/Assets/compass.png" />
+            <BitmapImage x:Key="Sci-Fi Logo" UriSource="/Assets/screen.png" />
 
             <!-- Define data templates for each viewmodel -->
             <!--<DataTemplate DataType="{x:Type vm:AlbumsViewModel}">

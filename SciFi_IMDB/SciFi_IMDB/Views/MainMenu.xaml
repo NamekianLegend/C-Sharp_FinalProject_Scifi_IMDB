@@ -22,6 +22,9 @@
 
             <!-- Navigate Menu-->
             <MenuItem Header="Navigate">
+                <MenuItem.Icon>
+                    <Image Source="/Assets/navigation.png" Width="16" Height="16"/>
+                </MenuItem.Icon>
                 <MenuItem Header="Home"
                       Command="{Binding NavigateToHomeCommand}"
                       ToolTip="Return to the application home screen.">
@@ -31,7 +34,7 @@
                 </MenuItem>
                 
                 <MenuItem Header="Movies"
-                      Command="{Binding NavigateToArtistsCommand}"
+                      Command="{Binding NavigateToMoviesCommand}"
                       ToolTip="Browse all Sci-Fi movies on IMDB.">
                     <MenuItem.Icon>
                         <Image Source="/Assets/movie.png" Width="16" Height="16"/>
@@ -39,7 +42,7 @@
                 </MenuItem>
                 
                 <MenuItem Header="TV Shows"
-                      Command="{Binding NavigateToTracksCommand}"
+                      Command="{Binding NavigateToTVShowsCommand}"
                       ToolTip="Browse all Sci-Fi TV shows on IMDB.">
                     <MenuItem.Icon>
                         <Image Source="/Assets/tv.png" Width="16" Height="16"/>
@@ -47,7 +50,7 @@
                 </MenuItem>
                 
                 <MenuItem Header="Actors/Actresses"
-                      Command="{Binding NavigateToAlbumsCommand}"
+                      Command="{Binding NavigateToActorsCommand}"
                       ToolTip="Browse all actors/actresses in all Sci-Fi movies/TV shows on IMDB.">
                     <MenuItem.Icon>
                         <Image Source="/Assets/actor.png" Width="16" Height="16"/>
@@ -74,21 +77,21 @@
                 </StackPanel>
             </Button>
             
-            <Button Command="{Binding NavigateToArtistsCommand}" Margin="4,0" ToolTip=" Browse movies">
+            <Button Command="{Binding NavigateToMoviesCommand}" Margin="4,0" ToolTip=" Browse movies">
                 <StackPanel Orientation="Horizontal">
                     <Image Source="/Assets/movie.png" Width="16" Height="16" Margin="0,0,4,0"/>
                     <TextBlock Text="Movies"/>
                 </StackPanel>
             </Button>
             
-            <Button Command="{Binding NavigateToAlbumsCommand}" Margin="4,0" ToolTip="Browse TV shows">
+            <Button Command="{Binding NavigateToTVShowsCommand}" Margin="4,0" ToolTip="Browse TV shows">
                 <StackPanel Orientation="Horizontal">
                     <Image Source="/Assets/tv.png" Width="16" Height="16" Margin="0,0,4,0"/>
                     <TextBlock Text="TV Shows"/>
                 </StackPanel>
             </Button>
             
-            <Button Command="{Binding NavigateToTracksCommand}" Margin="4,0" ToolTip="Browse actors/actresses">
+            <Button Command="{Binding NavigateToActorsCommand}" Margin="4,0" ToolTip="Browse actors/actresses">
                 <StackPanel Orientation="Horizontal">
                     <Image Source="/Assets/actor.png" Width="16" Height="16" Margin="0,0,4,0"/>
                     <TextBlock Text="Actors/Actresses"/>

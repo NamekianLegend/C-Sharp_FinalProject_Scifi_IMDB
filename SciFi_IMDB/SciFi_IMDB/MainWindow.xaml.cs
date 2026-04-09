@@ -22,3 +22,6 @@ namespace SciFi_IMDB
 // Home icon image: <a href="https://www.flaticon.com/free-icons/home" title="home icons">Home icons created by Vectors Market - Flaticon</a>
 // Actor icon image: <a href="https://www.flaticon.com/free-icons/actor" title="actor icons">Actor icons created by Freepik - Flaticon</a>
 // TV show icon image: <a href="https://www.flaticon.com/free-icons/tv" title="tv icons">Tv icons created by Freepik - Flaticon</a>
+// Placeholder logo image: <a href="https://www.flaticon.com/free-icons/sci-fi" title="sci fi icons">Sci fi icons created by Freepik - Flaticon</a>
+// Back icon image: <a href="https://www.flaticon.com/free-icons/left-arrow" title="left arrow icons">Left arrow icons created by hqrloveq - Flaticon</a>
+// Exit icon image: <a href="https://www.flaticon.com/free-icons/signout" title="signout icons">Signout icons created by hqrloveq - Flaticon</a>

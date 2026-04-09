@@ -10,8 +10,12 @@
 
   <ItemGroup>
     <None Remove="Assets\actor.png" />
+    <None Remove="Assets\back.png" />
+    <None Remove="Assets\exit.png" />
     <None Remove="Assets\house.png" />
     <None Remove="Assets\movie.png" />
+    <None Remove="Assets\navigation.png" />
+    <None Remove="Assets\screen.png" />
     <None Remove="Assets\spaceman.png" />
     <None Remove="Assets\tv.png" />
   </ItemGroup>
@@ -38,10 +42,22 @@
     <Resource Include="Assets\actor.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Assets\back.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\exit.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Assets\house.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Assets\movie.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\navigation.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\screen.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Assets\spaceman.png">
