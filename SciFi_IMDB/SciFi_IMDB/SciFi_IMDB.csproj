@@ -9,7 +9,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Assets\actor.png" />
+    <None Remove="Assets\house.png" />
+    <None Remove="Assets\movie.png" />
     <None Remove="Assets\spaceman.png" />
+    <None Remove="Assets\tv.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -31,7 +35,19 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Assets\actor.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\house.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\movie.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Assets\spaceman.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\tv.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>

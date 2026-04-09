@@ -28,11 +28,11 @@ namespace SciFi_IMDB.ViewModels
 
         //Command objects for navigation
         public ICommand NavigateToHomeCommand => new RelayCommand(_ => _navigationService.NavigateTo<HomeViewModel>());
-        public ICommand NavigateToArtistsCommand => new RelayCommand(_ => _navigationService.NavigateTo<ArtistsViewModel>());
-        public ICommand NavigateToTracksCommand => new RelayCommand(_ => _navigationService.NavigateTo<TracksViewModel>());
-        public ICommand NavigateToAlbumsCommand => new RelayCommand(_ => _navigationService.NavigateTo<AlbumsViewModel>());
-        public ICommand NavigateToOrdersCommand => new RelayCommand(_ => _navigationService.NavigateTo<OrdersViewModel>());
-        public ICommand NavigateToCatalogCommand => new RelayCommand(_ => _navigationService.NavigateTo<CatalogViewModel>());
+        //public ICommand NavigateToArtistsCommand => new RelayCommand(_ => _navigationService.NavigateTo<ArtistsViewModel>());
+        //public ICommand NavigateToTracksCommand => new RelayCommand(_ => _navigationService.NavigateTo<TracksViewModel>());
+        //public ICommand NavigateToAlbumsCommand => new RelayCommand(_ => _navigationService.NavigateTo<AlbumsViewModel>());
+        //public ICommand NavigateToOrdersCommand => new RelayCommand(_ => _navigationService.NavigateTo<OrdersViewModel>());
+        //public ICommand NavigateToCatalogCommand => new RelayCommand(_ => _navigationService.NavigateTo<CatalogViewModel>());
         public ICommand NavigateBackCommand => new RelayCommand(_ => _navigationService.GoBack());
         public ICommand ExitCommand => new RelayCommand(_ => Application.Current.Shutdown());
 

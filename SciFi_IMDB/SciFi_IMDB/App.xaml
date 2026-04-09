@@ -18,7 +18,7 @@
             <BitmapImage x:Key="NorthwindLogo" UriSource="/Assets/compass.png" />
 
             <!-- Define data templates for each viewmodel -->
-            <DataTemplate DataType="{x:Type vm:AlbumsViewModel}">
+            <!--<DataTemplate DataType="{x:Type vm:AlbumsViewModel}">
                 <views:AlbumsView/>
             </DataTemplate>
 
@@ -40,7 +40,7 @@
 
             <DataTemplate DataType="{x:Type vm:HomeViewModel}">
                 <views:HomeView/>
-            </DataTemplate>
+            </DataTemplate>-->
 
         </ResourceDictionary>
 
