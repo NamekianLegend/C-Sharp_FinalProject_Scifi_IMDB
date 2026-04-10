@@ -4,7 +4,7 @@
              xmlns:local="clr-namespace:SciFi_IMDB"
              xmlns:vm="clr-namespace:SciFi_IMDB.ViewModels"
              xmlns:views="clr-namespace:SciFi_IMDB.Views"
-             StartupUri="MainWindow.xaml">
+             Startup="Application_Startup">
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -17,29 +17,21 @@
             <BitmapImage x:Key="Sci-Fi Logo" UriSource="/Assets/screen.png" />
 
             <!-- Define data templates for each viewmodel -->
-            <!--<DataTemplate DataType="{x:Type vm:AlbumsViewModel}">
-                <views:AlbumsView/>
+            <DataTemplate DataType="{x:Type vm:SciFiActorsViewModel}">
+                <views:SciFiActorsView/>
             </DataTemplate>
 
-            <DataTemplate DataType="{x:Type vm:ArtistsViewModel}">
-                <views:ArtistsView/>
+            <DataTemplate DataType="{x:Type vm:SciFiMoviesViewModel}">
+                <views:SciFiMoviesView/>
             </DataTemplate>
 
-            <DataTemplate DataType="{x:Type vm:TracksViewModel}">
-                <views:TracksView/>
-            </DataTemplate>
-
-            <DataTemplate DataType="{x:Type vm:OrdersViewModel}">
-                <views:OrdersView/>
-            </DataTemplate>
-
-            <DataTemplate DataType="{x:Type vm:CatalogViewModel}">
-                <views:CatalogView/>
+            <DataTemplate DataType="{x:Type vm:SciFiShowsViewModel}">
+                <views:SciFiShowsView/>
             </DataTemplate>
 
             <DataTemplate DataType="{x:Type vm:HomeViewModel}">
                 <views:HomeView/>
-            </DataTemplate>-->
+            </DataTemplate>
 
         </ResourceDictionary>
 

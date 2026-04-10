@@ -114,7 +114,7 @@
                 </StackPanel>
             </Button>
 
-            <Button Command="{Binding NavigateToTVShowsCommand}" Margin="4,0">
+            <Button Command="{Binding NavigateToShowsCommand}" Margin="4,0">
                 <StackPanel Orientation="Horizontal">
                     <Image Source="/Assets/tv.png" Width="16" Height="16" Margin="0,0,4,0"/>
                     <TextBlock Text="TV Shows"/>
