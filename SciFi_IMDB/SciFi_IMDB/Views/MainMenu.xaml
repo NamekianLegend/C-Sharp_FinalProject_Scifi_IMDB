@@ -6,61 +6,60 @@
              xmlns:local="clr-namespace:SciFi_IMDB.Views"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <DockPanel>
-        <!-- Dropdown menu on the left -->
-        <Menu DockPanel.Dock="Left" Height="45" VerticalContentAlignment="Center">
-            <!-- File Menu-->
+    
+    <Grid Height="45" Background="Transparent">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <!-- Menu -->
+            <ColumnDefinition Width="*"/>
+            <!-- Spacer / Title -->
+            <ColumnDefinition Width="Auto"/>
+            <!-- Buttons -->
+        </Grid.ColumnDefinitions>
+
+        <!-- LEFT: Dropdown Menu -->
+        <Menu Grid.Column="0" VerticalContentAlignment="Center">
             <MenuItem Header="File">
                 <MenuItem Header="Exit"
-                      Command="{Binding ExitCommand}"
-                      ToolTip="Exit the application.">
+                      Command="{Binding ExitCommand}">
                     <MenuItem.Icon>
                         <Image Source="/Assets/exit.png" Width="16" Height="16"/>
                     </MenuItem.Icon>
                 </MenuItem>
             </MenuItem>
 
-            <!-- Navigate Menu-->
             <MenuItem Header="Navigate">
                 <MenuItem.Icon>
                     <Image Source="/Assets/navigation.png" Width="16" Height="16"/>
                 </MenuItem.Icon>
-                <MenuItem Header="Home"
-                      Command="{Binding NavigateToHomeCommand}"
-                      ToolTip="Return to the application home screen.">
+
+                <MenuItem Header="Home" Command="{Binding NavigateToHomeCommand}">
                     <MenuItem.Icon>
                         <Image Source="/Assets/house.png" Width="16" Height="16"/>
                     </MenuItem.Icon>
                 </MenuItem>
-                
-                <MenuItem Header="Movies"
-                      Command="{Binding NavigateToMoviesCommand}"
-                      ToolTip="Browse all Sci-Fi movies on IMDB.">
+
+                <MenuItem Header="Movies" Command="{Binding NavigateToMoviesCommand}">
                     <MenuItem.Icon>
                         <Image Source="/Assets/movie.png" Width="16" Height="16"/>
                     </MenuItem.Icon>
                 </MenuItem>
-                
-                <MenuItem Header="TV Shows"
-                      Command="{Binding NavigateToTVShowsCommand}"
-                      ToolTip="Browse all Sci-Fi TV shows on IMDB.">
+
+                <MenuItem Header="TV Shows" Command="{Binding NavigateToTVShowsCommand}">
                     <MenuItem.Icon>
                         <Image Source="/Assets/tv.png" Width="16" Height="16"/>
                     </MenuItem.Icon>
                 </MenuItem>
-                
-                <MenuItem Header="Actors/Actresses"
-                      Command="{Binding NavigateToActorsCommand}"
-                      ToolTip="Browse all actors/actresses in all Sci-Fi movies/TV shows on IMDB.">
+
+                <MenuItem Header="Actors/Actresses" Command="{Binding NavigateToActorsCommand}">
                     <MenuItem.Icon>
                         <Image Source="/Assets/actor.png" Width="16" Height="16"/>
                     </MenuItem.Icon>
                 </MenuItem>
-                
+
                 <Separator/>
-                <MenuItem Header="Go Back"
-                      Command="{Binding NavigateBackCommand}"
-                      ToolTip="Navigate back to the previous page.">
+
+                <MenuItem Header="Go Back" Command="{Binding NavigateBackCommand}">
                     <MenuItem.Icon>
                         <Image Source="/Assets/back.png" Width="16" Height="16"/>
                     </MenuItem.Icon>
@@ -68,43 +67,73 @@
             </MenuItem>
         </Menu>
 
-        <!-- Nav buttons on the right -->
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
-            <Button Command="{Binding NavigateToHomeCommand}" Margin="4,0" ToolTip="Home">
+        <!-- CENTER: Title / Spacer -->
+        <StackPanel Grid.Column="1"
+            Orientation="Horizontal"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center">
+
+            <!-- Left Icon -->
+            <Image Source="/Assets/film.png"
+                Width="20"
+                Height="20"
+                Margin="0,0,8,0"/>
+
+            <!-- Title -->
+            <TextBlock Text="SCI-FI IMDB EXPLORER"
+               Foreground="#00FF00"
+               FontSize="20"
+               FontWeight="Bold"
+               VerticalAlignment="Center"
+               Opacity="0.85"/>
+
+            <!-- Right Icon -->
+            <Image Source="/Assets/science-fiction.png"
+                Width="20"
+                Height="20"
+                Margin="8,0,0,0"/>
+        </StackPanel>
+
+        <!-- RIGHT: Navigation Buttons -->
+        <StackPanel Grid.Column="2"
+                Orientation="Horizontal"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Center">
+
+            <Button Command="{Binding NavigateToHomeCommand}" Margin="4,0">
                 <StackPanel Orientation="Horizontal">
                     <Image Source="/Assets/house.png" Width="16" Height="16" Margin="0,0,4,0"/>
                     <TextBlock Text="Home"/>
                 </StackPanel>
             </Button>
-            
-            <Button Command="{Binding NavigateToMoviesCommand}" Margin="4,0" ToolTip=" Browse movies">
+
+            <Button Command="{Binding NavigateToMoviesCommand}" Margin="4,0">
                 <StackPanel Orientation="Horizontal">
                     <Image Source="/Assets/movie.png" Width="16" Height="16" Margin="0,0,4,0"/>
                     <TextBlock Text="Movies"/>
                 </StackPanel>
             </Button>
-            
-            <Button Command="{Binding NavigateToTVShowsCommand}" Margin="4,0" ToolTip="Browse TV shows">
+
+            <Button Command="{Binding NavigateToTVShowsCommand}" Margin="4,0">
                 <StackPanel Orientation="Horizontal">
                     <Image Source="/Assets/tv.png" Width="16" Height="16" Margin="0,0,4,0"/>
                     <TextBlock Text="TV Shows"/>
                 </StackPanel>
             </Button>
-            
-            <Button Command="{Binding NavigateToActorsCommand}" Margin="4,0" ToolTip="Browse actors/actresses">
+
+            <Button Command="{Binding NavigateToActorsCommand}" Margin="4,0">
                 <StackPanel Orientation="Horizontal">
                     <Image Source="/Assets/actor.png" Width="16" Height="16" Margin="0,0,4,0"/>
                     <TextBlock Text="Actors/Actresses"/>
                 </StackPanel>
             </Button>
 
-            <!-- Back button separated by a small gap -->
-            <Button Command="{Binding NavigateBackCommand}" Margin="16,0,4,0" ToolTip="Go Back">
+            <Button Command="{Binding NavigateBackCommand}" Margin="16,0,4,0">
                 <StackPanel Orientation="Horizontal">
                     <Image Source="/Assets/back.png" Width="16" Height="16" Margin="0,0,4,0"/>
                     <TextBlock Text="Back"/>
                 </StackPanel>
             </Button>
         </StackPanel>
-    </DockPanel>
+    </Grid>
 </UserControl>
