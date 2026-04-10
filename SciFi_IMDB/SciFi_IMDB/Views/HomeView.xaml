@@ -7,6 +7,35 @@
              xmlns:vm="clr-namespace:SciFi_IMDB.ViewModels"
              mc:Ignorable="d">
     <Grid>
-            
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+
+            <!-- Welcome message -->
+            <TextBlock Text="Welcome to the Sci-Fi IMDB Explorer!"
+                   Style="{StaticResource mainHeaderStyle}"
+                   HorizontalAlignment="Center"/>
+            <TextBlock Text="Check out your Favourite Sci-Fi Tv and Movies Right Here! "
+                   HorizontalAlignment="Center"
+                   Margin="0,0,0,30"/>
+
+            <!-- Navigation buttons -->
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button Content="Home"
+                    Width="150"
+                    Command="{Binding NavigateToHomeCommand}"
+                    ToolTip="Go to Home"/>
+                <Button Content="Movies"
+                    Width="150"
+                    Command="{Binding NavigateToMoviesCommand}"
+                    ToolTip="Go to Movies"/>
+                <Button Content="Shows"
+                    Width="150"
+                    Command="{Binding NavigateToShowsCommand}"
+                    ToolTip="Check out some shows!"/>
+                <Button Content="Actors/Actresses"
+                    Width="150"
+                    Command="{Binding NavigateToActorsCommand}"
+                    ToolTip="Check out your favourite actors/actresses"/>
+            </StackPanel>
+        </StackPanel>
     </Grid>
 </UserControl>
