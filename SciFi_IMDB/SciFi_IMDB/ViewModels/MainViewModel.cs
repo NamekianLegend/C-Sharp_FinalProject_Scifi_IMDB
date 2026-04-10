@@ -28,9 +28,9 @@ namespace SciFi_IMDB.ViewModels
 
         //Command objects for navigation
         public ICommand NavigateToHomeCommand => new RelayCommand(_ => _navigationService.NavigateTo<HomeViewModel>());
-        //public ICommand NavigateToArtistsCommand => new RelayCommand(_ => _navigationService.NavigateTo<MoviesViewModel>());
-        //public ICommand NavigateToTracksCommand => new RelayCommand(_ => _navigationService.NavigateTo<TVShowsViewModel>());
-        //public ICommand NavigateToAlbumsCommand => new RelayCommand(_ => _navigationService.NavigateTo<ActorsViewModel>());
+        public ICommand NavigateToMoviesCommand => new RelayCommand(_ => _navigationService.NavigateTo<SciFiMoviesViewModel>());
+        public ICommand NavigateToShowsCommand => new RelayCommand(_ => _navigationService.NavigateTo<SciFiShowsViewModel>());
+        public ICommand NavigateToActorsCommand => new RelayCommand(_ => _navigationService.NavigateTo<SciFiActorsViewModel>());
         public ICommand NavigateBackCommand => new RelayCommand(_ => _navigationService.GoBack());
         public ICommand ExitCommand => new RelayCommand(_ => Application.Current.Shutdown());
 

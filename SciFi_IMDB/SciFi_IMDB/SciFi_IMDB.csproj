@@ -12,9 +12,11 @@
     <None Remove="Assets\actor.png" />
     <None Remove="Assets\back.png" />
     <None Remove="Assets\exit.png" />
+    <None Remove="Assets\film.png" />
     <None Remove="Assets\house.png" />
     <None Remove="Assets\movie.png" />
     <None Remove="Assets\navigation.png" />
+    <None Remove="Assets\science-fiction.png" />
     <None Remove="Assets\screen.png" />
     <None Remove="Assets\spaceman.png" />
     <None Remove="Assets\tv.png" />
@@ -48,6 +50,9 @@
     <Resource Include="Assets\exit.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Assets\film.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Assets\house.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
@@ -55,6 +60,9 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Assets\navigation.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\science-fiction.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Assets\screen.png">
