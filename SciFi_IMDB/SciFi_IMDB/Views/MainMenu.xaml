@@ -45,7 +45,7 @@
                     </MenuItem.Icon>
                 </MenuItem>
 
-                <MenuItem Header="TV Shows" Command="{Binding NavigateToTVShowsCommand}">
+                <MenuItem Header="TV Shows" Command="{Binding NavigateToShowsCommand}">
                     <MenuItem.Icon>
                         <Image Source="/Assets/tv.png" Width="16" Height="16"/>
                     </MenuItem.Icon>
