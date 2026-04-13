@@ -59,3 +59,4 @@ namespace SciFi_IMDB
 // Exit icon image: <a href="https://www.flaticon.com/free-icons/signout" title="signout icons">Signout icons created by hqrloveq - Flaticon</a>
 // Left title icon image: <a href="https://www.flaticon.com/free-icons/cinema" title="cinema icons">Cinema icons created by Nikita Golubev - Flaticon</a>
 // right title icon image: <a href="https://www.flaticon.com/free-icons/science-fiction" title="Science fiction icons">Science fiction icons created by Freepik - Flaticon</a>
+// Window Icon image: <a href="https://www.flaticon.com/free-icons/solar-system" title="solar system icons">Solar system icons created by Freepik - Flaticon</a>
