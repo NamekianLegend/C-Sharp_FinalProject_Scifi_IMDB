@@ -14,7 +14,7 @@
                 <ResourceDictionary Source="/Styles/Menus.xaml" />
             </ResourceDictionary.MergedDictionaries>
             
-            <BitmapImage x:Key="Sci-Fi Logo" UriSource="/Assets/screen.png" />
+           
 
             <!-- Define data templates for each viewmodel -->
             <DataTemplate DataType="{x:Type vm:SciFiActorsViewModel}">
