@@ -40,9 +40,12 @@
 
     <!-- Project-specific named styles preserved and adjusted to match theme -->
     <Style x:Key="mainHeaderStyle" TargetType="TextBlock">
-        <Setter Property="FontSize" Value="32" />
-        <Setter Property="FontWeight" Value="ExtraBold" />
-        <Setter Property="Foreground" Value="{StaticResource TerminalText}"/>
+        <Setter Property="FontSize" Value="36" />
+        <Setter Property="FontWeight" Value="Bold" />
+        <Setter Property="FontFamily" Value="Consolas" />
+        <Setter Property="Foreground" Value="{StaticResource TerminalText}" />
+        <Setter Property="Effect" Value="{StaticResource NeonGlow}" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
         <Setter Property="Padding" Value="5" />
         <Setter Property="Margin" Value="5" />
     </Style>

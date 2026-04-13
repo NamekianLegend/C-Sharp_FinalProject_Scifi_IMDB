@@ -22,5 +22,11 @@
     <!-- ToolTip/system info brushes so tooltips follow the terminal theme -->
     <SolidColorBrush x:Key="{x:Static SystemColors.InfoBrushKey}" Color="#FF071013" />
     <SolidColorBrush x:Key="{x:Static SystemColors.InfoTextBrushKey}" Color="#FF66FF66" />
+    <!-- Bloom effect  -->
+    <DropShadowEffect x:Key="NeonGlow"
+                      Color="#FF66FF66"
+                      BlurRadius="15"
+                      ShadowDepth="0"
+                      Opacity="0.8" />
 
 </ResourceDictionary>

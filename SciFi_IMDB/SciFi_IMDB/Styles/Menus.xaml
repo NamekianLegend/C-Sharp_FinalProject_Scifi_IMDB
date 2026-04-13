@@ -67,7 +67,7 @@
                                     <ColumnDefinition Width="*" />
                                 </Grid.ColumnDefinitions>
                                 <ContentPresenter ContentSource="Icon" VerticalAlignment="Center" Margin="4,0"/>
-                                <ContentPresenter Grid.Column="1" ContentSource="Header" RecognizesAccessKey="True" VerticalAlignment="Center" Margin="8,0"/>
+                                <ContentPresenter Grid.Column="1" x:Name="HeaderContent" ContentSource="Header" RecognizesAccessKey="True" VerticalAlignment="Center" Margin="8,0"/>
                             </Grid>
                         </Border>
 
@@ -77,13 +77,19 @@
                             </Border>
                         </Popup>
                     </Grid>
+                    <ControlTemplate.Resources>
+                        <!-- Soft glow for menu item text when highlighted -->
+                        <DropShadowEffect x:Key="MenuGlow" Color="#FF7CFC00" BlurRadius="10" ShadowDepth="0" Opacity="0.95" />
+                    </ControlTemplate.Resources>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsHighlighted" Value="True">
                             <Setter TargetName="Bd" Property="Background" Value="{StaticResource TerminalAccent}" />
                             <Setter Property="Foreground" Value="{StaticResource TerminalText}" />
+                            <Setter TargetName="HeaderContent" Property="Effect" Value="{StaticResource MenuGlow}" />
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="False">
                             <Setter Property="Opacity" Value="0.6" />
+                            <Setter TargetName="HeaderContent" Property="Effect" Value="{x:Null}" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
