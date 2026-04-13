@@ -6,7 +6,7 @@ namespace SciFi_IMDB
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// Scaffolding command:
-    /// Scaffold-DbContext -Connection "Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=IMDB;Integrated Security=True;Encrypt=True;Trust Server Certificate=True"` -Provider Microsoft.EntityFrameworkCore.SqlServer ` -Tables Titles, Genres, Title_Genres, Names, Principals, Ratings ` -OutputDir Models\Generated ` -ContextDir Data\Generated ` -Namespace SciFi_IMDB ` -ContextNamespace SciFi_IMDB ` -Force
+    /// Scaffold-DbContext -Connection "Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=IMDB;Integrated Security=True;Encrypt=True;Trust Server Certificate=True"` -Provider Microsoft.EntityFrameworkCore.SqlServer ` -Tables Titles, Genres, Title_Genres, Names, Principals, Ratings ` -OutputDir Models\Generated ` -ContextDir Data\Generated ` -Namespace SciFi_IMDB ` -ContextNamespace SciFi_IMDB ` -Force ` -NoOnConfiguring
     /// </summary>
     public partial class MainWindow : Window
     {
