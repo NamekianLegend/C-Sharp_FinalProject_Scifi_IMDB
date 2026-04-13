@@ -14,7 +14,7 @@ The Sci-Fi IMDB is a powerful application that utilizes the IMDB database, allow
 This application is organized according to the MVVM (Model-View-ViewModel) architecture, ensuring a clean separation of concerns. Components include:
 - **ViewModels**: Handle the application's data and UI logic.
 - **Services**: Manage data operations and API calls.
-- **Data Access**: Interact with the data sources and manage data flow.
+- **Data**: Interact with the data sources and manage data flow.
 - **Commands**: Implement commands that can be bound to UI elements.
 - **Models**: Define the data structure used throughout the application.
 - **Views**: Present the UI elements to the user.
@@ -22,9 +22,3 @@ This application is organized according to the MVVM (Model-View-ViewModel) archi
 
 ## Getting Started
 To run this application locally, please follow the steps outlined in the setup documentation.
-
-## Contributing
-Contributions are welcome! Please read our Contributing Guidelines for information on how to contribute to this project.
-
-## License
-This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details.
