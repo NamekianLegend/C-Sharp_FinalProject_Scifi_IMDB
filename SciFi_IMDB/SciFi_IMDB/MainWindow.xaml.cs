@@ -1,5 +1,8 @@
-﻿using System.Windows;
-using SciFi_IMDB.ViewModels;
+﻿using SciFi_IMDB.ViewModels;
+using System.Runtime.InteropServices;
+using System.Windows;
+using System.Windows.Input;
+using System.Windows.Interop;
 
 namespace SciFi_IMDB
 {
@@ -21,6 +24,28 @@ namespace SciFi_IMDB
             MatrixVideo.Position = TimeSpan.FromMilliseconds(1);
             MatrixVideo.Play();
         }
+
+        protected override void OnSourceInitialized(EventArgs e)
+        {
+            base.OnSourceInitialized(e);
+
+            var hwnd = new WindowInteropHelper(this).Handle;
+            EnableDarkTitleBar(hwnd);
+        }
+
+        private static void EnableDarkTitleBar(IntPtr hwnd)
+        {
+            const int DWMWA_USE_IMMERSIVE_DARK_MODE = 20;
+            int useDark = 1;
+            DwmSetWindowAttribute(hwnd, DWMWA_USE_IMMERSIVE_DARK_MODE, ref useDark, sizeof(int));
+        }
+
+        [DllImport("dwmapi.dll")]
+        private static extern int DwmSetWindowAttribute(
+            IntPtr hwnd,
+            int dwAttribute,
+            ref int pvAttribute,
+            int cbAttribute);
     }
 }
 
