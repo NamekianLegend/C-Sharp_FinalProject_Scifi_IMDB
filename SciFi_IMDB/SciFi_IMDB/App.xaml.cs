@@ -55,6 +55,7 @@ namespace SciFi_IMDB
             {
                 var dbContext = scope.ServiceProvider.GetRequiredService<ImdbContext>();
 
+                // Actors
                 var actorsViewModel = scope.ServiceProvider.GetRequiredService<SciFiActorsViewModel>();
                 var actorNames = dbContext.Names
                     .Where(n => n.PrimaryProfession.Contains("actor") || n.PrimaryProfession.Contains("actress"))
@@ -62,6 +63,27 @@ namespace SciFi_IMDB
                     .ToList();
 
                 actorsViewModel.Actors = new ObservableCollection<Name>(actorNames);
+
+
+                
+
+                // Movies
+                var moviesViewModel = scope.ServiceProvider.GetRequiredService<SciFiMoviesViewModel>();
+                var movies = dbContext.Titles
+                    .Where(t => t.TitleType == "movie")
+                    .Take(500)
+                    .ToList();
+
+                moviesViewModel.Movies = new ObservableCollection<Title>(movies);
+
+                // TV Shows
+                var showsViewModel = scope.ServiceProvider.GetRequiredService<SciFiShowsViewModel>();
+                var shows = dbContext.Titles
+                    .Where(t => t.TitleType == "tvSeries" || t.TitleType == "tvMiniSeries")
+                    .Take(500)
+                    .ToList();
+
+                showsViewModel.Shows = new ObservableCollection<Title>(shows);
             }
         }
 

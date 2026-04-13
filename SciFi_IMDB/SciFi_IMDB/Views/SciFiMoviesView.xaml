@@ -12,7 +12,94 @@
     <UserControl.Resources>
         <time:MillisecondsToTimeConverter x:Key="MSToTimeConverter"/>
     </UserControl.Resources>
-    <Grid>
-        <TextBlock Text="Sci-Fi Movies" Style="{StaticResource mainHeaderStyle}"/>
-    </Grid>
+    
+    
+    <StackPanel>
+        <TextBlock Text="Movies" Style="{DynamicResource mainHeaderStyle}"/>
+
+        <!-- Sort Section -->
+        <Grid Margin="0,8,0,8">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Orientation="Horizontal" Grid.Column="0">
+                <!-- Search by dropdown -->
+                <TextBlock Text="Search by: " VerticalAlignment="Center" Margin="0,0,8,0"/>
+                <ComboBox ItemsSource="{Binding SearchOptions}"
+                       SelectedItem="{Binding SelectedSearch, Mode=TwoWay}"
+                       Margin="0,0,16,0"
+                       Width="170"/>
+
+                <!-- Search box -->
+                <TextBox Width="250"
+                      VerticalContentAlignment="Center"
+                      Padding="5,0"
+                      Margin="0,0,16,0"
+                      Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}"/>
+
+                <!-- Sort -->
+                <TextBlock Text="Sort by: " VerticalAlignment="Center" Margin="0,0,8,0"/>
+                <ComboBox ItemsSource="{Binding SortOptions}"
+                       SelectedItem="{Binding SelectedSort, Mode=TwoWay}"
+                       Width="200"/>
+            </StackPanel>
+
+            <!-- Clear button on the right -->
+            <Button Grid.Column="1"
+                 Content="Clear"
+                 HorizontalAlignment="Right"
+                 Command="{Binding ClearCommand}"
+                 ToolTip="Clear search and filters" />
+        </Grid>
+
+
+        <!-- Manual column headers -->
+        <Border BorderBrush="{DynamicResource TerminalAccent}" BorderThickness="0,0,0,1" Margin="5,0">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Show ID" FontWeight="Bold" Width="125"/>
+                <TextBlock Text="Title" FontWeight="Bold" Width="500" Padding="25,0"/>
+                <TextBlock Text="Rating" FontWeight="Bold" Width="100" Padding="25,0"/>
+                <TextBlock Text="Duration" FontWeight="Bold" Width="100" Padding="25,0"/>
+            </StackPanel>
+        </Border>
+        <ListView ItemsSource="{Binding Movies}" Height="464"
+               ScrollViewer.VerticalScrollBarVisibility="Auto">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Expander>
+                        <Expander.Header>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="{Binding TitleId}" Width="125"/>
+                                <TextBlock Text="{Binding PrimaryTitle}" Width="500"/>
+                                <TextBlock Text="{Binding Rating}" Width="100"/>
+                                <TextBlock Text="{Binding RuntimeMinutes}" Width="100"/>
+                            </StackPanel>
+                        </Expander.Header>
+
+                            <!-- Albums shown when expanded 
+                        <ListView ItemsSource="{Binding Albums}" Margin="20,5,0,5">
+                            <ListView.View>
+                                <GridView>
+                                    <GridViewColumn Header="Album ID" DisplayMemberBinding="{Binding AlbumId}"/>
+                                    <GridViewColumn Header="Title" DisplayMemberBinding="{Binding Title}"/>
+                                </GridView>
+                            </ListView.View>
+                        </ListView>-->
+                    </Expander>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <!-- Summary bar — always visible below the list -->
+        <StackPanel Orientation="Horizontal" Margin="5,4">
+            <TextBlock Text="Showing "/>
+            <TextBlock Text="{Binding Movies.Count}"/>
+            <TextBlock Text=" of "/>
+            <TextBlock Text="{Binding TotalMovies}"/>
+            <TextBlock Text=" actors/actresses"/>
+        </StackPanel>
+
+    </StackPanel>
 </UserControl>
