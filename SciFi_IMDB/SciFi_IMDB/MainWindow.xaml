@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:SciFi_IMDB"
         xmlns:views="clr-namespace:SciFi_IMDB.Views"
         mc:Ignorable="d"
-        Title="Sci-Fi IMDB Explorer" Height="800" Width="1350">
+        Title="Sci-Fi IMDB Explorer" Height="800" Width="1350"
+        Icon="/Assets/solar-system.ico">
 
     <Grid>
         <MediaElement
