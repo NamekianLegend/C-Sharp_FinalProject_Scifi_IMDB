@@ -7,17 +7,29 @@
         xmlns:views="clr-namespace:SciFi_IMDB.Views"
         mc:Ignorable="d"
         Title="Sci-Fi IMDB Explorer" Height="800" Width="1350">
-    <DockPanel>
-        <!-- Menu Section -->
-        <Border Style="{DynamicResource sectionBorderStyle}" DockPanel.Dock="Top">
-            <views:MainMenu />
-        </Border>
 
-        <!-- App Content Section fills remaining space -->
-        <Border Style="{DynamicResource sectionBorderStyle}">
-            <ContentControl Content="{Binding CurrentViewModel}"
-                    HorizontalContentAlignment="Stretch"
-                    VerticalContentAlignment="Stretch"/>
-        </Border>
-    </DockPanel>
+    <Grid>
+        <MediaElement
+            x:Name="MatrixVideo"
+            Source="pack://siteoforigin:,,,/Assets/Matrix.mp4"
+            LoadedBehavior="Play"
+            UnloadedBehavior="Manual"
+            Stretch="UniformToFill"
+            IsHitTestVisible="False"
+            MediaEnded="MatrixVideo_MediaEnded"/>
+
+        <Border Background="#CC000000" IsHitTestVisible="False"/>
+
+        <DockPanel>
+            <Border Style="{DynamicResource sectionBorderStyle}" DockPanel.Dock="Top" Background="Transparent">
+                <views:MainMenu />
+            </Border>
+
+            <Border Style="{DynamicResource sectionBorderStyle}" Background="Transparent">
+                <ContentControl Content="{Binding CurrentViewModel}"
+                                HorizontalContentAlignment="Stretch"
+                                VerticalContentAlignment="Stretch"/>
+            </Border>
+        </DockPanel>
+    </Grid>
 </Window>

@@ -13,7 +13,13 @@ namespace SciFi_IMDB
         public MainWindow(MainViewModel mainViewModel)
         {
             InitializeComponent();
+            MatrixVideo.Play();
             DataContext = mainViewModel;
+        }
+        private void MatrixVideo_MediaEnded(object sender, RoutedEventArgs e)
+        {
+            MatrixVideo.Position = TimeSpan.FromMilliseconds(1);
+            MatrixVideo.Play();
         }
     }
 }

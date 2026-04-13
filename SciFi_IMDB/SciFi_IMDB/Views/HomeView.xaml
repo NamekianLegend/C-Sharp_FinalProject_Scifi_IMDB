@@ -7,6 +7,9 @@
              xmlns:vm="clr-namespace:SciFi_IMDB.ViewModels"
              mc:Ignorable="d">
     <Grid>
+
+
+
         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
 
             <!-- Welcome message -->

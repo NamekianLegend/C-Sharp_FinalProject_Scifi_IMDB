@@ -22,5 +22,6 @@ namespace SciFi_IMDB.Views
         {
             InitializeComponent();
         }
+
     }
 }

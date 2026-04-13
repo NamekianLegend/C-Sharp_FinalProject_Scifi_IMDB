@@ -14,6 +14,7 @@
     <None Remove="Assets\exit.png" />
     <None Remove="Assets\film.png" />
     <None Remove="Assets\house.png" />
+    <None Remove="Assets\Matrix.mp4" />
     <None Remove="Assets\movie.png" />
     <None Remove="Assets\navigation.png" />
     <None Remove="Assets\science-fiction.png" />
@@ -56,6 +57,9 @@
     <Resource Include="Assets\house.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
+    <Content Include="Assets\Matrix.mp4">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Resource Include="Assets\movie.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
