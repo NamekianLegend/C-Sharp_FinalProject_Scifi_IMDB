@@ -26,7 +26,7 @@
                 <Button Content="Movies"
                     Width="150"
                     Command="{Binding NavigateToMoviesCommand}"
-                    ToolTip="Go to Movies"/>
+                    ToolTip="Check out some movies!"/>
                 <Button Content="Shows"
                     Width="150"
                     Command="{Binding NavigateToShowsCommand}"
@@ -34,7 +34,7 @@
                 <Button Content="Actors/Actresses"
                     Width="150"
                     Command="{Binding NavigateToActorsCommand}"
-                    ToolTip="Check out your favourite actors/actresses"/>
+                    ToolTip="Check out your favourite actors/actresses!"/>
             </StackPanel>
         </StackPanel>
     </Grid>
