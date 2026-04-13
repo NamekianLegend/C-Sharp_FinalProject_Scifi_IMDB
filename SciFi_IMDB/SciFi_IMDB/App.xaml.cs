@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Diagnostics;
 using Microsoft.Extensions.DependencyInjection;
 using SciFi_IMDB.Services;
 using SciFi_IMDB.ViewModels;
@@ -21,22 +22,55 @@ namespace SciFi_IMDB
         private void Application_Startup(object sender, StartupEventArgs e)
         {
 
-                var services = new ServiceCollection();
-                ConfigureServices(services);
+            var services = new ServiceCollection();
+            ConfigureServices(services);
 
-                var mainViewModel = ServiceProvider.GetRequiredService<MainViewModel>();
-                var navService = ServiceProvider.GetRequiredService<INavigationService>() as NavigationService;
-                navService.SetMainViewModel(mainViewModel);
-                navService.NavigateTo<HomeViewModel>();
+            // Load data from db — wrap in try/catch so startup still proceeds if DB access fails
+            try
+            {
+                LoadData();
+            }
+            catch (System.Exception ex)
+            {
+                // Show a message so user can see the error and continue to the UI for troubleshooting
+                MessageBox.Show($"Failed to load data: {ex.Message}\n\nCheck database connection and localdb service.", "Startup Error", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
 
-                var mainWindow = ServiceProvider.GetRequiredService<MainWindow>();
-                mainWindow.Show();
 
+            var mainViewModel = ServiceProvider.GetRequiredService<MainViewModel>();
+            var navService = ServiceProvider.GetRequiredService<INavigationService>() as NavigationService;
+            navService.SetMainViewModel(mainViewModel);
+            navService.NavigateTo<HomeViewModel>();
+
+            var mainWindow = ServiceProvider.GetRequiredService<MainWindow>();
+            mainWindow.Show();
+
+        }
+
+
+        private void LoadData()
+        {
+            // Load all data from the database, into the viewmodel collecitons
+            using (var scope = ServiceProvider.CreateScope())
+            {
+                var dbContext = scope.ServiceProvider.GetRequiredService<ImdbContext>();
+
+                var actorsViewModel = scope.ServiceProvider.GetRequiredService<SciFiActorsViewModel>();
+                var actorNames = dbContext.Names
+                    .Where(n => n.PrimaryProfession.Contains("actor") || n.PrimaryProfession.Contains("actress"))
+                    .Take(500)
+                    .ToList();
+
+                actorsViewModel.Actors = new ObservableCollection<Name>(actorNames);
+            }
         }
 
 
         private void ConfigureServices(IServiceCollection services)
         {
+
+            services.AddDbContext<ImdbContext>(options =>
+                 options.UseSqlServer(ConfigurationManager.ConnectionStrings["IMDBConn"].ConnectionString));
 
             services.AddSingleton<INavigationService, NavigationService>();
             services.AddSingleton<MainWindow>();
