@@ -13,6 +13,6 @@
         <time:MillisecondsToTimeConverter x:Key="MSToTimeConverter"/>
     </UserControl.Resources>
     <Grid>
-        <TextBlock Text="Movies List." Style="{StaticResource mainHeaderStyle}"/>
+        <TextBlock Text="Sci-Fi Movies" Style="{StaticResource mainHeaderStyle}"/>
     </Grid>
 </UserControl>
