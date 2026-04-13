@@ -77,7 +77,7 @@ namespace SciFi_IMDB.ViewModels
 
         public List<string> SearchOptions { get; } = new List<string>
         {
-            "Name Name"
+            "Actor Name"
         };
         public List<string> SortOptions { get; } = new List<string>
         {
