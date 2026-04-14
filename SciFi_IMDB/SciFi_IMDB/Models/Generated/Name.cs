@@ -14,6 +14,8 @@ public partial class Name
     public int? DeathYear { get; set; }
 
     public string? PrimaryProfession { get; set; }
+    public List<string>? KnownForTitles { get; set; }
+    public string KnownForDisplay => KnownForTitles != null ? string.Join(", ", KnownForTitles) : "None";
 
     public virtual ICollection<Principal> Principals { get; set; } = new List<Principal>();
 }

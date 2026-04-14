@@ -33,6 +33,9 @@ namespace SciFi_IMDB.ViewModels
                 OnPropertyChanged(nameof(TotalActors));
             }
         }
+
+
+
         public string SelectedSort
         {
             get => _selectedSort;
@@ -69,7 +72,7 @@ namespace SciFi_IMDB.ViewModels
             OnPropertyChanged(nameof(SearchText));
             _selectedSort = "ID Ascending";
             OnPropertyChanged(nameof(SelectedSort));
-            _selectedSearch = "Name Name";
+            _selectedSearch = "Actor Name";
             OnPropertyChanged(nameof(SelectedSearch));
             ApplyLinqSort();
         });
@@ -77,7 +80,8 @@ namespace SciFi_IMDB.ViewModels
 
         public List<string> SearchOptions { get; } = new List<string>
         {
-            "Actor Name"
+            "Actor Name",
+            "Known For Movie"
         };
         public List<string> SortOptions { get; } = new List<string>
         {
@@ -104,6 +108,14 @@ namespace SciFi_IMDB.ViewModels
                             _searchText,
                             StringComparison.OrdinalIgnoreCase
                             )
+                        );
+                        break;
+
+                    case "Known For Movie":
+                        // Note: This assumes you added a "KnownForTitles" property to your Name.cs class!
+                        sorted = sorted.Where(a =>
+                        a.KnownForTitles != null &&
+                        a.KnownForTitles.Any(title => title.Contains(_searchText, StringComparison.OrdinalIgnoreCase))
                         );
                         break;
                 }

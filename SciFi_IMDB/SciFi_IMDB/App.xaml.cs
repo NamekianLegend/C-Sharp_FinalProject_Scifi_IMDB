@@ -50,22 +50,48 @@ namespace SciFi_IMDB
 
         private void LoadData()
         {
-            // Load all data from the database, into the viewmodel collecitons
             using (var scope = ServiceProvider.CreateScope())
             {
                 var dbContext = scope.ServiceProvider.GetRequiredService<ImdbContext>();
 
                 // Actors
                 var actorsViewModel = scope.ServiceProvider.GetRequiredService<SciFiActorsViewModel>();
-                var actorNames = dbContext.Names
-                    .Where(n => n.PrimaryProfession.Contains("actor") || n.PrimaryProfession.Contains("actress"))
+
+                // as of right now I believe this loading technique is slowing down the launch of the program, I was trying a few other methods and was having trouble with them so I chose to stay with this for now
+                var flatData = (from n in dbContext.Names
+                                where n.PrimaryProfession.Contains("actor") || n.PrimaryProfession.Contains("actress")
+                                join p in dbContext.Principals on n.NameId equals p.NameId
+                                join t in dbContext.Titles on p.TitleId equals t.TitleId
+                                where t.Genres.Any(g => g.Name == "Sci-Fi")
+                                select new
+                                {
+                                    n.NameId,
+                                    n.PrimaryName,
+                                    n.PrimaryProfession,
+                                    n.BirthYear,
+                                    n.DeathYear,
+                                    MovieTitle = t.PrimaryTitle
+                                })
+                                .Take(2500) 
+                                .ToList();  
+
+               
+                var actorNames = flatData
+                    .GroupBy(row => new { row.NameId, row.PrimaryName, row.PrimaryProfession, row.BirthYear, row.DeathYear })
+                    .Select(group => new Name
+                    {
+                        NameId = group.Key.NameId,
+                        PrimaryName = group.Key.PrimaryName,
+                        PrimaryProfession = group.Key.PrimaryProfession,
+                        BirthYear = group.Key.BirthYear,
+                        DeathYear = group.Key.DeathYear,
+                        KnownForTitles = group.Select(row => row.MovieTitle).Distinct().ToList()
+                    })
                     .Take(500)
                     .ToList();
 
                 actorsViewModel.Actors = new ObservableCollection<Name>(actorNames);
 
-
-                
 
                 // Movies
                 var moviesViewModel = scope.ServiceProvider.GetRequiredService<SciFiMoviesViewModel>();
