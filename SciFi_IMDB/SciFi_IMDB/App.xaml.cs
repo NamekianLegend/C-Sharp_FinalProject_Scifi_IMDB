@@ -71,6 +71,8 @@ namespace SciFi_IMDB
                 var moviesViewModel = scope.ServiceProvider.GetRequiredService<SciFiMoviesViewModel>();
                 var movies = dbContext.Titles
                     .Where(t => t.TitleType == "movie")
+                    .Include(t => t.Genres)
+                    .Where(t => t.Genres.Any(g => g.Name == "Sci-Fi"))
                     .Take(500)
                     .ToList();
 
@@ -80,6 +82,8 @@ namespace SciFi_IMDB
                 var showsViewModel = scope.ServiceProvider.GetRequiredService<SciFiShowsViewModel>();
                 var shows = dbContext.Titles
                     .Where(t => t.TitleType == "tvSeries" || t.TitleType == "tvMiniSeries")
+                    .Include(t => t.Genres)
+                    .Where(t => t.Genres.Any(g => g.Name == "Sci-Fi"))
                     .Take(500)
                     .ToList();
 

@@ -88,7 +88,7 @@ namespace SciFi_IMDB.ViewModels
 
         private void ApplyLinqSort()
         {
-            // Sort the full list, then reassign Artists so UI updates
+            // Sort the full list, then reassign movies so UI updates
             if (_allMovies == null) return;
             IEnumerable<Title> sorted = _allMovies;
 
