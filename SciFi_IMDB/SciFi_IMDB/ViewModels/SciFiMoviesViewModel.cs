@@ -68,7 +68,7 @@ namespace SciFi_IMDB.ViewModels
             OnPropertyChanged(nameof(SearchText));
             _selectedSort = "ID Ascending";
             OnPropertyChanged(nameof(SelectedSort));
-            _selectedSearch = "Name Name";
+            _selectedSearch = "Movie Name";
             OnPropertyChanged(nameof(SelectedSearch));
             ApplyLinqSort();
         });
