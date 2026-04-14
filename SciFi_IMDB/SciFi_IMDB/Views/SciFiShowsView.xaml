@@ -16,7 +16,6 @@
     <StackPanel>
         <TextBlock Text="Shows" Style="{DynamicResource mainHeaderStyle}"/>
 
-        <!-- Sort Section -->
         <Grid Margin="0,8,0,8">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
@@ -24,81 +23,78 @@
             </Grid.ColumnDefinitions>
 
             <StackPanel Orientation="Horizontal" Grid.Column="0">
-                <!-- Search by dropdown -->
                 <TextBlock Text="Search by: " VerticalAlignment="Center" Margin="0,0,8,0"/>
                 <ComboBox ItemsSource="{Binding SearchOptions}"
-                       SelectedItem="{Binding SelectedSearch, Mode=TwoWay}"
-                       Margin="0,0,16,0"
-                       Width="170"/>
+                          SelectedItem="{Binding SelectedSearch, Mode=TwoWay}"
+                          Margin="0,0,16,0"
+                          Width="170"/>
 
-                <!-- Search box -->
                 <TextBox Width="250"
-                      VerticalContentAlignment="Center"
-                      Padding="5,0"
-                      Margin="0,0,16,0"
-                      Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}"/>
+                         VerticalContentAlignment="Center"
+                         Padding="5,0"
+                         Margin="0,0,16,0"
+                         Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}"/>
 
-                <!-- Sort -->
                 <TextBlock Text="Sort by: " VerticalAlignment="Center" Margin="0,0,8,0"/>
                 <ComboBox ItemsSource="{Binding SortOptions}"
-                       SelectedItem="{Binding SelectedSort, Mode=TwoWay}"
-                       Width="200"/>
+                          SelectedItem="{Binding SelectedSort, Mode=TwoWay}"
+                          Width="200"/>
             </StackPanel>
 
-            <!-- Clear button on the right -->
             <Button Grid.Column="1"
-                 Content="Clear"
-                 HorizontalAlignment="Right"
-                 Command="{Binding ClearCommand}"
-                 ToolTip="Clear search and filters" />
+                    Content="Clear"
+                    HorizontalAlignment="Right"
+                    Command="{Binding ClearCommand}"
+                    ToolTip="Clear search and filters" />
         </Grid>
 
-
-        <!-- Manual column headers -->
         <Border BorderBrush="{DynamicResource TerminalAccent}" BorderThickness="0,0,0,1" Margin="5,0">
             <StackPanel Orientation="Horizontal">
-                <TextBlock Text="Show ID" FontWeight="Bold" Width="125"/>
-                <TextBlock Text="Title" FontWeight="Bold" Width="500" Padding="25,0"/>
-                <TextBlock Text="Rating" FontWeight="Bold" Width="100" Padding="25,0"/>
-                <TextBlock Text="Duration" FontWeight="Bold" Width="100" Padding="25,0"/>
+                <TextBlock Text="Show ID" FontWeight="Bold" Width="100"/>
+                <TextBlock Text="Title" FontWeight="Bold" Width="400" Padding="5,0"/>
+                <TextBlock Text="Rating" FontWeight="Bold" Width="100" Padding="5,0"/>
+                <TextBlock Text="Duration" FontWeight="Bold" Width="100" Padding="5,0"/>
             </StackPanel>
         </Border>
+
         <ListView ItemsSource="{Binding Shows}" Height="464"
-               ScrollViewer.VerticalScrollBarVisibility="Auto">
+                  ScrollViewer.VerticalScrollBarVisibility="Auto">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <Expander>
                         <Expander.Header>
-                            <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="{Binding TitleId}" Width="125"/>
-                                <TextBlock Text="{Binding PrimaryTitle}" Width="500"/>
-                                <TextBlock Text="{Binding Rating}" Width="100"/>
-                                <TextBlock Text="{Binding RuntimeMinutes}" Width="100"/>
+                            <StackPanel Orientation="Horizontal" Margin="0,5">
+                                <TextBlock Text="{Binding TitleId}" Width="100" FontWeight="Bold" Foreground="Gray"/>
+                                <TextBlock Text="{Binding PrimaryTitle}" Width="400" FontSize="14" Padding="5,0"/>
+                                <TextBlock Text="{Binding Rating}" Width="100" Padding="5,0"/>
+                                <TextBlock Text="{Binding RuntimeMinutes, Converter={StaticResource MSToTimeConverter}}" Width="100" Padding="5,0"/>
                             </StackPanel>
                         </Expander.Header>
 
-                        <!-- Albums shown when expanded 
-                        <ListView ItemsSource="{Binding Albums}" Margin="20,5,0,5">
-                            <ListView.View>
-                                <GridView>
-                                    <GridViewColumn Header="Album ID" DisplayMemberBinding="{Binding AlbumId}"/>
-                                    <GridViewColumn Header="Title" DisplayMemberBinding="{Binding Title}"/>
-                                </GridView>
-                            </ListView.View>
-                        </ListView>-->
+                        <Expander.Content>
+                            <StackPanel Margin="30,5,0,15">
+                                <TextBlock Text="Show Details &amp; Genres:" FontWeight="SemiBold" Margin="0,0,0,5" Foreground="#007ACC"/>
+
+                                <ItemsControl ItemsSource="{Binding Genres}">
+                                    <ItemsControl.ItemTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="{Binding Name}" Margin="0,2"/>
+                                        </DataTemplate>
+                                    </ItemsControl.ItemTemplate>
+                                </ItemsControl>
+                            </StackPanel>
+                        </Expander.Content>
                     </Expander>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
 
-        <!-- Summary bar — always visible below the list -->
         <StackPanel Orientation="Horizontal" Margin="5,4">
             <TextBlock Text="Showing "/>
-            <TextBlock Text="{Binding Shows.Count}"/>
+            <TextBlock Text="{Binding Shows.Count}" FontWeight="Bold"/>
             <TextBlock Text=" of "/>
-            <TextBlock Text="{Binding TotalShows}"/>
+            <TextBlock Text="{Binding TotalShows}" FontWeight="Bold"/>
             <TextBlock Text=" shows"/>
         </StackPanel>
-
     </StackPanel>
 </UserControl>
