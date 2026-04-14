@@ -98,7 +98,7 @@
             <TextBlock Text="{Binding Movies.Count}"/>
             <TextBlock Text=" of "/>
             <TextBlock Text="{Binding TotalMovies}"/>
-            <TextBlock Text=" actors/actresses"/>
+            <TextBlock Text=" movies"/>
         </StackPanel>
 
     </StackPanel>
