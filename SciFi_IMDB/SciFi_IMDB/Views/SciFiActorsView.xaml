@@ -53,33 +53,32 @@
             <StackPanel Orientation="Horizontal">
                 <TextBlock Text="Actor ID" FontWeight="Bold" Width="125"/>
                 <TextBlock Text="Name" FontWeight="Bold" Width="500" Padding="25,0"/>
-                <TextBlock Text="Birth Year" FontWeight="Bold" Width="100" Padding="25,0"/>
-                <TextBlock Text="Death Year" FontWeight="Bold" Width="100" Padding="25,0"/>
             </StackPanel>
         </Border>
-        <ListView ItemsSource="{Binding Actors}" Height="464"
-               ScrollViewer.VerticalScrollBarVisibility="Auto">
+        <ListView ItemsSource="{Binding Actors}" Height="464" ScrollViewer.VerticalScrollBarVisibility="Auto">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <Expander>
                         <Expander.Header>
-                            <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="{Binding NameId}" Width="125"/>
-                                <TextBlock Text="{Binding PrimaryName}" Width="500"/>
-                                <TextBlock Text="{Binding BirthYear}" Width="100"/>
-                                <TextBlock Text="{Binding DeathYear}" Width="100"/>
+                            <StackPanel Orientation="Horizontal" Margin="0,5">
+                                <TextBlock Text="{Binding NameId}" Width="100" FontWeight="Bold" Foreground="Gray"/>
+                                <TextBlock Text="{Binding PrimaryName}" Width="400" FontSize="14"/>
                             </StackPanel>
                         </Expander.Header>
 
-                        <!-- Albums shown when expanded 
-                        <ListView ItemsSource="{Binding Albums}" Margin="20,5,0,5">
-                            <ListView.View>
-                                <GridView>
-                                    <GridViewColumn Header="Album ID" DisplayMemberBinding="{Binding AlbumId}"/>
-                                    <GridViewColumn Header="Title" DisplayMemberBinding="{Binding Title}"/>
-                                </GridView>
-                            </ListView.View>
-                        </ListView>-->
+                        <Expander.Content>
+                            <StackPanel Margin="30,5,0,15">
+                                <TextBlock Text="Known For (Sci-Fi):" FontWeight="SemiBold" Margin="0,0,0,5" Foreground="#007ACC"/>
+
+                                <ItemsControl ItemsSource="{Binding KnownForTitles}">
+                                    <ItemsControl.ItemTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="{Binding}" Margin="0,2"/>
+                                        </DataTemplate>
+                                    </ItemsControl.ItemTemplate>
+                                </ItemsControl>
+                            </StackPanel>
+                        </Expander.Content>
                     </Expander>
                 </DataTemplate>
             </ListView.ItemTemplate>
