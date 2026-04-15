@@ -25,7 +25,7 @@
             <Border Style="{DynamicResource sectionBorderStyle}" DockPanel.Dock="Top" Background="Transparent">
                 <views:MainMenu />
             </Border>
-
+            <!-- Video by <a href="https://pixabay.com/users/christianbodhi-9869182/?utm_source=link-attribution&utm_medium=referral&utm_campaign=video&utm_content=47802">Christian Bodhi</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=video&utm_content=47802">Pixabay</a>-->
             <Border Style="{DynamicResource sectionBorderStyle}" Background="Transparent">
                 <ContentControl Content="{Binding CurrentViewModel}"
                                 HorizontalContentAlignment="Stretch"
